@@ -8,22 +8,22 @@ include('views/templates/header.php');
 </form>
 <?php
 
-
+// Load the correspondig form
 if(isset($_POST['newAccount']))
 {
-	echo 'nouveau compte';
+	include('views/form/newAccount.php');
 }
 elseif(isset($_POST['deposit']))
 {
-	echo 'dépot';
+	include('views/form/deposit.php');
 }
 elseif(isset($_POST['withdraw']))
 {
-	echo 'retrait';
+	include('views/form/withdraw.php');
 }
 elseif(isset($_POST['transfer']))
 {
-	echo 'virement';
+	include('views/form/transfer.php');
 }
 else
 {
