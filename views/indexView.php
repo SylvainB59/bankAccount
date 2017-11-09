@@ -17,15 +17,15 @@ include('views/templates/header.php');
 <section>
 	<!-- open a new account -->
 	<form action="" method="POST">
-		<input type="submit" name="" value="Créer un nouveau compte">
+		<input type="submit" name="newAccount" value="Créer un nouveau compte">
 	</form>
 
 	<!-- show existing account -->
 <?php
 
-// foreach($accounts as $accoutn)
+// foreach($accounts as $account)
 // {
-	
+
 // }
 
 ?>

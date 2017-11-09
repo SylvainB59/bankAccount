@@ -26,7 +26,7 @@ class AccountManager
 			$accounts[$key] = new Account($value);
 		}
 
-		return $accounts
+		return $accounts;
 	}
 
 	// Add a new account
@@ -34,7 +34,7 @@ class AccountManager
 	{
 
 	}
-
+/*
 	// Deposit in an account
 	public function addAccount($account)
 	{
@@ -52,5 +52,5 @@ class AccountManager
 	{
 
 	}
-
+*/
 }
