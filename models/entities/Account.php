@@ -5,7 +5,7 @@ class Account
 	protected $id;
 	protected $accountName;
 	protected $balance;
-	protected $user;
+	protected $userId;
 
 	public function __construct($array)
 	{
@@ -19,7 +19,7 @@ class Account
       // Recovering setter name corresponding to an attribut.
 			$method = 'set'.ucfirst($key);
       // If corresponding setter exist.
-			if(methode_exist($this, $method))
+			if(method_exists($this, $method))
 			{
         // Calling the setter.
 				$this->$method($value);
@@ -90,19 +90,19 @@ class Account
   /**
    * @return mixed
    */
-  public function getUser()
+  public function getUserId()
   {
-      return $this->user;
+      return $this->userId;
   }
 
   /**
-   * @param mixed $user
+   * @param mixed $userId
    *
    * @return self
    */
-  public function setUser($user)
+  public function setUserId($userId)
   {
-      $this->user = $user;
+      $this->userId = $userId;
 
       return $this;
   }

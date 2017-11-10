@@ -6,7 +6,7 @@ class AccountManager
 	{
 		try
 		{
-			$bdd = new PDO('mysql:host=localhost;dbname=bankAccount;charset=utf8', 'root', '');
+			$bdd = new PDO('mysql:host=localhost;dbname=bankAccount;charset=utf8', 'root', 'Neosyl59');
 		}
 		catch (Exection $e)
 		{
@@ -32,7 +32,12 @@ class AccountManager
 	// Add a new account
 	public function addAccount($account)
 	{
-
+		$req = $this->getBdd()->prepare('INSERT INTO accounts(accountName, balance, userId) VALUES (:accountName, :balance, :userId)');
+		$req->execute(array(
+			'accountName' => $account->getAccountName(),
+			'balance' => $account->getBalance(),
+			'userId' => $account->getUserId()
+		));
 	}
 /*
 	// Deposit in an account
