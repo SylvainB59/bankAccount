@@ -27,6 +27,8 @@ class Account
 		}
 	}
 
+  // Getters and Setters
+
   /**
    * @return mixed
    */
@@ -107,9 +109,19 @@ class Account
       return $this;
   }
 
+  // Methods
+
   public function withdraw($amount)
   {
     $newBalance = $this->getBalance() - $amount;
     $this->setBalance($newBalance);
   }
+
+  public function deposit($amount)
+  {
+    $newBalance = $this->getBalance() + $amount;
+    $this->setBalance($newBalance);
+  }
+
+  
 }

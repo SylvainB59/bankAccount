@@ -40,7 +40,7 @@ class AccountManager
 		return $account;
 	}
 
-	// Add a new account
+	// Add a new account in db
 	public function addAccount($account)
 	{
 		$req = $this->getBdd()->prepare('INSERT INTO accounts(accountName, balance, userId) VALUES (:accountName, :balance, :userId)');
@@ -51,11 +51,13 @@ class AccountManager
 		));
 	}
 
+	// Update account in db
 	public function updateAccount($account)
 	{
-		$req = $this->getBdd()->prepare('UPDATE accounts SET balance = :newBalance WHERE id = :id');
+		$req = $this->getBdd()->prepare('UPDATE accounts SET accountName = :newAccountName, balance = :newBalance WHERE id = :id');
 		$req->execute(array(
 			'id' => $account->getId(),
+			'newAccountName' => $account->getAccountName(),
 			'newBalance' => $account->getBalance()
 		));
 	}
@@ -72,7 +74,7 @@ class AccountManager
 
 	}
 
-	// transfert beetween accounts
+	// transfer beetween accounts
 	public function addAccount($account)
 	{
 

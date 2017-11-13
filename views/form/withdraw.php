@@ -3,22 +3,6 @@
 <div>
 	<form action="" method="POST">
 
-	<!-- with dropdown -->
-
-	<!-- <select name="accountToWithdraw" id="accountToWithdraw" class="row ml-5">
-		<option value="" selected disabled>Choisissez un compte</option> -->
-<?php
-/*foreach($accounts as $account)
-{
-		echo '<option value="'.$account->getId().'">'.$account->getAccountName().' / '.$account->getBalance().'€</option>';
-}
-*/?>
-
-	<!-- </select> -->
-
-<!-- //////////////////////////////////////////////////// -->
-
-	<!-- with radio -->
 		<p>Choisissez le compte à débiter :</p>
 <?php
 foreach($accounts as $account)

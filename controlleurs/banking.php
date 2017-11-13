@@ -7,7 +7,7 @@ if(isset($_POST['validNewAccount'])) //create a new account
 {
 	if(isset($_POST['accountName'], $_POST['balance'], $_POST['userId']))
 	{
-		// write in a tab ths $_POST needed
+		// write in a tab the $_POST needed
 		$tab = ['accountName' => $_POST['accountName'], 'balance' => $_POST['balance'], 'userId' => $_POST['userId']];
 
 		// Create a new obj Account with tab in attribut
@@ -15,19 +15,38 @@ if(isset($_POST['validNewAccount'])) //create a new account
 
 		// Add new account in db
 		$AccountManager->addAccount($newAccount);
-
 	}
-
 }
-elseif(isset($_POST['validWithdraw']))
+elseif(isset($_POST['validWithdraw'])) //withdraw on an account
 {
 	$amount = (int)$_POST['amount'];
+
+	// Get the obj account by his id
 	$accountToWithdraw = $AccountManager->getAccount($_POST['accountId']);
 
+	// If 0 < amount < actual balance
 	if($amount > 0 AND $amount <= $accountToWithdraw->getBalance())
 	{
+		// Withdraw the amount
 		$accountToWithdraw->withdraw($amount);
+		// Update account in db
 		$AccountManager->updateAccount($accountToWithdraw);
+	}
+}
+elseif(isset($_POST['validDeposit'])) //deposit on an account
+{
+	$amount = (int)$_POST['amount'];
+
+	// Get the obj account by his id
+	$accountToDeposit = $AccountManager->getAccount($_POST['accountId']);
+
+	// If 0 < amount
+	if($amount > 0)
+	{
+		// Deposit the amount
+		$accountToDeposit->deposit($amount);
+		// Update account in db
+		$AccountManager->updateAccount($accountToDeposit);
 	}
 }
 // elseif(isset($_POST['index']))
