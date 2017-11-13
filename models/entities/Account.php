@@ -82,7 +82,7 @@ class Account
    */
   public function setBalance($balance)
   {
-      $this->balance = $balance;
+      $this->balance = (int)$balance;
 
       return $this;
   }
@@ -105,5 +105,11 @@ class Account
       $this->userId = $userId;
 
       return $this;
+  }
+
+  public function withdraw($amount)
+  {
+    $newBalance = $this->getBalance() - $amount;
+    $this->setBalance($newBalance);
   }
 }

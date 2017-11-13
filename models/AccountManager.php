@@ -29,6 +29,17 @@ class AccountManager
 		return $accounts;
 	}
 
+	// Get one account with his Id
+	public function getAccount($accountId)
+	{
+		$req = $this->getBdd()->prepare('SELECT * FROM accounts WHERE id = :id');
+		$req->execute(array('id' => $accountId));
+		$account = $req->fetch(PDO::FETCH_ASSOC);
+		$account = new Account($account);
+
+		return $account;
+	}
+
 	// Add a new account
 	public function addAccount($account)
 	{
@@ -37,6 +48,15 @@ class AccountManager
 			'accountName' => $account->getAccountName(),
 			'balance' => $account->getBalance(),
 			'userId' => $account->getUserId()
+		));
+	}
+
+	public function updateAccount($account)
+	{
+		$req = $this->getBdd()->prepare('UPDATE accounts SET balance = :newBalance WHERE id = :id');
+		$req->execute(array(
+			'id' => $account->getId(),
+			'newBalance' => $account->getBalance()
 		));
 	}
 /*
@@ -58,4 +78,13 @@ class AccountManager
 
 	}
 */
+
+	public function countAccount($userId)
+	{
+		$req = $this->getBdd()->prepare('SELECT COUNT(id) nbAccount FROM accounts WHERE userId = :userId');
+		$req->execute(array('userId' => $userId));
+		$nbAccount = $req->fetch(PDO::FETCH_ASSOC);
+		// $nbAccount = $req->execute(array('userId' => $userId));
+		return $nbAccount['nbAccount'];
+	}
 }

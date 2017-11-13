@@ -1,5 +1,8 @@
 <?php
 
+// Get all accounts in db
+$accounts = $AccountManager->getAccounts();
+
 if(isset($_POST['validNewAccount'])) //create a new account
 {
 	if(isset($_POST['accountName'], $_POST['balance'], $_POST['userId']))
@@ -13,7 +16,18 @@ if(isset($_POST['validNewAccount'])) //create a new account
 		// Add new account in db
 		$AccountManager->addAccount($newAccount);
 
-		header('location: ');
+	}
+
+}
+elseif(isset($_POST['validWithdraw']))
+{
+	$amount = (int)$_POST['amount'];
+	$accountToWithdraw = $AccountManager->getAccount($_POST['accountId']);
+
+	if($amount > 0 AND $amount <= $accountToWithdraw->getBalance())
+	{
+		$accountToWithdraw->withdraw($amount);
+		$AccountManager->updateAccount($accountToWithdraw);
 	}
 }
 // elseif(isset($_POST['index']))

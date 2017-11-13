@@ -27,7 +27,7 @@ class User
 	 */
 	public function getId()
 	{
-		return $this->id;
+			return $this->id;
 	}
 
 	/**
@@ -37,9 +37,9 @@ class User
 	 */
 	public function setId($id)
 	{
-		$this->id = $id;
+			$this->id = $id;
 
-		return $this;
+			return $this;
 	}
 
 	/**
@@ -47,7 +47,7 @@ class User
 	 */
 	public function getUserName()
 	{
-		return $this->userName;
+			return $this->userName;
 	}
 
 	/**
@@ -57,9 +57,9 @@ class User
 	 */
 	public function setUserName($userName)
 	{
-		$this->userName = $userName;
+			$this->userName = $userName;
 
-		return $this;
+			return $this;
 	}
 
 	/**
@@ -67,7 +67,7 @@ class User
 	 */
 	public function getUserFirstName()
 	{
-		return $this->userFirstName;
+			return $this->userFirstName;
 	}
 
 	/**
@@ -77,8 +77,8 @@ class User
 	 */
 	public function setUserFirstName($userFirstName)
 	{
-		$this->userFirstName = $userFirstName;
+			$this->userFirstName = $userFirstName;
 
-		return $this;
+			return $this;
 	}
 }

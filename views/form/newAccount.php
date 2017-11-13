@@ -1,4 +1,4 @@
-<p>nouveau compte</p>
+<h4>nouveau compte</h4>
 
 <form action="" method="POST">
 	<p>
@@ -10,6 +10,6 @@
 		<input type="number" name="balance" id="balance" min="50" max="250" placeholder="50">
 		<span>( min 50€ / maxi 250€ )</span>
 	</p>
-	<input type="hidden" name="userId" value="<?php $_SESSION['userId']; ?>">
+	<input type="text" name="userId" value="<?php echo $_SESSION['userId']; ?>">
 	<input type="submit" name="validNewAccount">
 </form>

@@ -25,6 +25,10 @@ elseif(isset($_POST['transfer']))
 {
 	include('views/form/transfer.php');
 }
+elseif(isset($_POST['close']))
+{
+	include('views/form/closeAccount.php');
+}
 else
 {
 	header('location: index.php');
