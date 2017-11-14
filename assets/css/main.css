@@ -97,19 +97,28 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+/*common rules*/
 body{
-    background-color: black;
+
+}
+
+header, .banking, h4{
+    text-align: center;
+}
+
+header{
+    background-color: lightblue;
 }
 
 input {
     border: 2px solid white;
-    background-color: black;
-    color: white;
+    background-color: lightblue;
     padding: 15px 0;
     transition: 0.3s;
 }
 
 input:hover{
+    border-color: blue;
     background-color: white;
     color: black;
     cursor: pointer;
@@ -120,19 +129,24 @@ input:disabled{
     color: grey;
 }
 
-input:hover:disabled{
-    pointer: default;
-    
+.mainAside input:last-child{
+    background-color: red;
+    border-color: white;
+    color: black;
 }
 
+.mainAside input:last-child:hover{
+    border-color: black;
+    color: white;
+}
+
+/*main section*/
 section{
     background-color: white;
 }
 
-.accounts p{
-}
-
 .accounts p:nth-child(2){
+    background-color: white;
     text-align: right;
     margin-bottom: 0;
 }
@@ -145,7 +159,25 @@ section{
     background-color: grey;
 }
 
+/*main banking*/
+.banking h4{
+    text-align: center;
+}
 
+.selectAccount{
+    border: 2px solid blue;
+    margin-bottom: 15px;
+}
+
+#amount{
+    border: 1px solid blue;
+    background-color: white;
+}
+
+#amount:focus{
+    background-color: lightblue;
+    /*border-color: blue;*/
+}
 
 
 

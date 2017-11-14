@@ -3,9 +3,13 @@
 include('views/templates/header.php');
 
 ?>
-<form action="" method="POST">
-	<input type="submit" name="index" value="<-- Back">
-</form>
+<aside>
+	<form action="" method="POST">
+		<input type="submit" name="index" value="<-- Back" class="px-3">
+	</form>
+</aside>
+
+<section>
 <?php
 
 // Load the correspondig form
@@ -33,7 +37,9 @@ else
 {
 	header('location: index.php');
 }
-
+?>
+</section>
+<?php
 
 include('views/templates/footer.php');
 

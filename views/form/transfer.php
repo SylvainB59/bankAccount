@@ -1,10 +1,10 @@
-<h4>transfert</h4>
+<h4>Transfert</h4>
 
-<div>
+<div class="banking">
 	<form action="" method="POST">
 		<div class="row">
-		<article class="col">
-			<p>Choisissez le compte à déiter :</p>
+		<article class="col col-lg-4 mx-auto bg-light selectAccount">
+			<p>Choisissez le compte à débiter :</p>
 <?php
 foreach($accounts as $account)
 {
@@ -13,7 +13,7 @@ foreach($accounts as $account)
 }
 ?>
 		</article>
-		<article class="col">
+		<article class="col col-lg-4 mx-auto bg-light selectAccount">
 			<p>Choisissez le compte à créditer :</p>
 <?php
 foreach($accounts as $account)
@@ -28,6 +28,6 @@ foreach($accounts as $account)
 			<label for="amount">Combien voulez-vous transférer ? </label>
 			<input type="text" name="amount" id="amount">€
 		</p>
-		<input type="submit" name="validTransfer" value="Confirmer">
+		<input type="submit" name="validTransfer" value="Confirmer" class="px-3">
 	</form>
 </div>

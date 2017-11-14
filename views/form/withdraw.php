@@ -1,9 +1,11 @@
-<h4>retrait</h4>
+<h4>Retrait</h4>
 
-<div>
+<div class="banking">
 	<form action="" method="POST">
 
 		<p>Choisissez le compte à débiter :</p>
+		<div class="row">
+			<article class="col-12 col-md-8 col-lg-6 mx-auto bg-light selectAccount">
 <?php
 foreach($accounts as $account)
 {
@@ -11,10 +13,12 @@ foreach($accounts as $account)
 	<label for="'.$account->getId().'">'.$account->getAccountName().' / '.$account->getBalance().'€</label></p>';
 }
 ?>
+			</article>
+		</div>
 		<p>
 			<label for="amount">Quelle somme souhaitez-vous retirer ? </label>
 			<input type="text" name="amount" id="amount">€
 		</p>
-		<input type="submit" name="validWithdraw" value="Confirmer">
+		<input type="submit" name="validWithdraw" value="Confirmer" class="px-3">
 	</form>
 </div>

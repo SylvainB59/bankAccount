@@ -1,9 +1,11 @@
-<h4>dépot</h4>
+<h4>Dépot</h4>
 
-<div>
+<div class="banking">
 	<form action="" method="POST">
 
 		<p>Choisissez le compte à créditer :</p>
+		<div class="row">
+			<article class="col-12 col-md-8 col-lg-6 mx-auto bg-light selectAccount">
 <?php
 foreach($accounts as $account)
 {
@@ -11,10 +13,12 @@ foreach($accounts as $account)
 	<label for="'.$account->getId().'">'.$account->getAccountName().' / '.$account->getBalance().'€</label></p>';
 }
 ?>
+			</article>
+		</div>
 		<p>
 			<label for="amount">Combien avez-vous crédité ? </label>
 			<input type="text" name="amount" id="amount">€
 		</p>
-		<input type="submit" name="validDeposit" value="Confirmer">
+		<input type="submit" name="validDeposit" value="Confirmer" class="px-3">
 	</form>
 </div>

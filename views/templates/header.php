@@ -21,7 +21,7 @@
 		<![endif]-->
 
 		<header>
-			<h1>Bank</h1>
+			<h1>BANK</h1>
 			<h2>slogan</h2>
 		</header>
 
