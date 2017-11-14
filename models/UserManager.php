@@ -6,7 +6,7 @@ class UserManager
 	{
 		try
 		{
-			$bdd = new PDO('mysql:host=localhost;dbname=bankAccount;charset=utf8', 'root', 'Neosyl59');
+			$bdd = new PDO('mysql:host=localhost;dbname=bankAccount;charset=utf8', 'root', '');
 		}
 		catch (Exection $e)
 		{

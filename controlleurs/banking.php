@@ -69,10 +69,11 @@ elseif(isset($_POST['validTransfer']))
 		$AccountManager->updateAccount($accountToDeposit);
 	}
 }
-// elseif(isset($_POST['index']))
-// {
-// 	header('location: ');
-// }
+elseif(isset($_POST['validClose']))
+{
+	$accountToClose = $AccountManager->getAccount($_POST['accountId']);
 
+	$AccountManager->deleteAccount($accountToClose);
+}
 
 include('views/bankingView.php');

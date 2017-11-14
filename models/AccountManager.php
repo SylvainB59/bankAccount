@@ -6,7 +6,7 @@ class AccountManager
 	{
 		try
 		{
-			$bdd = new PDO('mysql:host=localhost;dbname=bankAccount;charset=utf8', 'root', 'Neosyl59');
+			$bdd = new PDO('mysql:host=localhost;dbname=bankAccount;charset=utf8', 'root', '');
 		}
 		catch (Exection $e)
 		{
@@ -60,6 +60,13 @@ class AccountManager
 			'newAccountName' => $account->getAccountName(),
 			'newBalance' => $account->getBalance()
 		));
+	}
+
+	// Delete account in db
+	public function deleteAccount($account)
+	{
+		$req = $this->getBdd()->prepare('DELETE FROM accounts WHERE id = :id');
+		$req->execute(array('id' => $account->getId()));
 	}
 /*
 	// Deposit in an account

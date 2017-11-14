@@ -1,5 +1,11 @@
 <h4>Retrait</h4>
-
+<?php
+if(isset($_POST['account']))
+{
+	$account = $_POST['account'];
+	echo 'Il vous rest'.$account->getBalance().' € sur votre compte';
+}
+?>
 <div class="banking">
 	<form action="" method="POST">
 
