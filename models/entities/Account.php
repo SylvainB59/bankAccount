@@ -123,5 +123,9 @@ class Account
     $this->setBalance($newBalance);
   }
 
-  
+  public function transfer($amount, $accountToDeposit)
+  {
+    $this->withdraw($amount);
+    $accountToDeposit->deposit($amount);
+  }
 }

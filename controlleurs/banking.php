@@ -3,7 +3,8 @@
 // Get all accounts in db
 $accounts = $AccountManager->getAccounts();
 
-if(isset($_POST['validNewAccount'])) //create a new account
+if(isset($_POST['validNewAccount']))
+// Create a new account
 {
 	if(isset($_POST['accountName'], $_POST['balance'], $_POST['userId']))
 	{
@@ -17,7 +18,8 @@ if(isset($_POST['validNewAccount'])) //create a new account
 		$AccountManager->addAccount($newAccount);
 	}
 }
-elseif(isset($_POST['validWithdraw'])) //withdraw on an account
+elseif(isset($_POST['validWithdraw']))
+// Withdraw on an account
 {
 	$amount = (int)$_POST['amount'];
 
@@ -33,7 +35,8 @@ elseif(isset($_POST['validWithdraw'])) //withdraw on an account
 		$AccountManager->updateAccount($accountToWithdraw);
 	}
 }
-elseif(isset($_POST['validDeposit'])) //deposit on an account
+elseif(isset($_POST['validDeposit']))
+// Deposit on an account
 {
 	$amount = (int)$_POST['amount'];
 
@@ -46,6 +49,23 @@ elseif(isset($_POST['validDeposit'])) //deposit on an account
 		// Deposit the amount
 		$accountToDeposit->deposit($amount);
 		// Update account in db
+		$AccountManager->updateAccount($accountToDeposit);
+	}
+}
+elseif(isset($_POST['validTransfer']))
+// Transfer beetween account
+{
+	$amount = (int)$_POST['amount'];
+
+	// Get the obj Account to withdraw
+	$accountToWithdraw = $AccountManager->getAccount($_POST['accountIdToWithdraw']);
+	// Get the obj account t odeposit
+	$accountToDeposit = $AccountManager->getAccount($_POST['accountIdToDeposit']);
+
+	if($amount > 0 AND $amount <= $accountToWithdraw->getBalance())
+	{
+		$accountToWithdraw->transfer($amount, $accountToDeposit);
+		$AccountManager->updateAccount($accountToWithdraw);
 		$AccountManager->updateAccount($accountToDeposit);
 	}
 }

@@ -97,7 +97,53 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+body{
+    background-color: black;
+}
 
+input {
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+    padding: 15px 0;
+    transition: 0.3s;
+}
+
+input:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+input:disabled{
+    background-color: darkgrey;
+    color: grey;
+}
+
+input:hover:disabled{
+    pointer: default;
+    
+}
+
+section{
+    background-color: white;
+}
+
+.accounts p{
+}
+
+.accounts p:nth-child(2){
+    text-align: right;
+    margin-bottom: 0;
+}
+
+.accounts div:nth-child(odd){
+    background-color: lightblue;
+}
+
+.accounts div:nth-child(even){
+    background-color: grey;
+}
 
 
 
