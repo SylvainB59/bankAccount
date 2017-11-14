@@ -1,9 +1,9 @@
-<h4>Dépot</h4>
+<h4>Fermer un compte</h4>
 
 <div class="banking">
 	<form action="" method="POST">
 
-		<p>Choisissez le compte à créditer :</p>
+		<p>Quel compte voulez-vous fermer ?</p>
 		<div class="row">
 			<article class="col-12 col-md-8 col-lg-6 mx-auto bg-light selectAccount">
 <?php
@@ -15,10 +15,6 @@ foreach($accounts as $account)
 ?>
 			</article>
 		</div>
-		<p>
-			<label for="amount">Combien avez-vous crédité ? </label>
-			<input type="text" name="amount" id="amount">€
-		</p>
-		<input type="submit" name="validDeposit" value="Confirmer" class="px-3">
+		<input type="submit" name="validClose" value="Confirmer" class="px-3">
 	</form>
 </div>
